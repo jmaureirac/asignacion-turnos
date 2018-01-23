@@ -5,7 +5,9 @@ var Schema = mongoose.Schema;
 
 var EventoSchema = Schema({
   name: String,
-  type: String
+  date: String,
+  block: Number,
+  trabajador: { type: Schema.ObjectId, ref: 'Trabajador'},
 });
 
 module.exports = mongoose.model('Evento', EventoSchema);
