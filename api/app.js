@@ -9,7 +9,6 @@ var app = express();
  * CARGAR RUTAS
  */
 var trabajador_routes = require('./routes/trabajador');
-var horario_routes = require('./routes/horario');
 var evento_routes = require('./routes/evento');
 
 /**
@@ -34,7 +33,6 @@ app.use((req, res, next) => {
  * RUTAS
  */
 app.use('/api', trabajador_routes);
-app.use('/api', horario_routes);
 app.use('/api', evento_routes);
 
 
