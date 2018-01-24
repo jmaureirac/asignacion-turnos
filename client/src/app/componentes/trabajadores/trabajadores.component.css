@@ -1,0 +1,28 @@
+.row {
+  width: 100%;
+}
+.trabajador{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.titulo{
+  padding: 8px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.boton-agrega{
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+
+.input{
+  margin-bottom: 15px;
+}
+
+.formulario{
+  margin-left: 21px;
+}
