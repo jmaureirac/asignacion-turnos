@@ -1,3 +1,16 @@
-<p>
-  bloques works!
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th class="header">Horario</th>
+      <th class="header" *ngFor="let celda of dias">{{celda}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rango_hora of rango_bloque; index as j">
+      <td class="rangos">{{j+1}}° Bloque <br> <i>[ {{rango_hora}} ]</i> </td>
+      <td *ngFor="let data of dias; index as i" (click)="onClickDataCell(rango_hora, data, semana[i])" class="bloque" >
+        {{ data }} {{ semana[i] }}
+      </td>
+    </tr>
+  </tbody>
+</table>

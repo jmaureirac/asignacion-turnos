@@ -1,0 +1,24 @@
+.bloque:hover {
+  background: #d3e6ff;
+  cursor: pointer;
+}
+
+table {
+  text-align: center;
+  border: 1px solid black;
+}
+
+th {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.header {
+  border-bottom: 1px solid black;
+  background-color: #eee;
+}
+
+.rangos {
+  border-right: 1px solid black;
+  background-color: #eee;
+}
