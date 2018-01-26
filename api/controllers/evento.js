@@ -11,6 +11,8 @@ function test(req, res) {
   return res.status(200).send({message: 'Probando Eventos'})
 }
 
+// TODO: modificar hora, recibir por parametro(body)
+
 function agregarEvento(req, res) {
   var params = req.body;
 
