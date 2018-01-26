@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Trabajador } from '../../modelos/trabajador';
+import { Trabajador } from '../../modelos/db/trabajador';
 import { TrabajadorService } from '../../servicios/trabajador.service';
+import { Evento } from '../../modelos/db/evento';
 import { EventoService } from '../../servicios/evento.service';
 
 @Component({
