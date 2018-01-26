@@ -18,6 +18,11 @@ export var VARIABLES = {
     '17:00-18:00'
   ],
   dias: [
-    'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'
+    'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'
   ]
+}
+
+export interface Bloque{
+  rango_bloque:string,
+  data:string
 }
