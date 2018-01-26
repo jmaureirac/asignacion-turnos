@@ -1,13 +1,16 @@
 <div class="row">
    <div class="col-xs-12">
       <h2 class="titulo">{{titulo}} <span class="caret"></span></h2>
-      <a href="#" class="list-group-item clearfix trabajador" *ngFor="let trabajador of trabajadores" style="border: red solid 1px">
-         <div class="pull-left">
-           <h4 class="list-group-item-heading">Nombre: {{trabajador.name}}</h4>
-           <p class="list-group-item-text">Email: {{trabajador.email}} </p>
-           <p class="list-group-item-text">Fono: {{trabajador.fono}}&nbsp;&nbsp;&nbsp;Edad: {{trabajador.edad}}</p>
-         </div>
-      </a>
+
+      <div class="caja-trabajadores">
+        <a href="#" class="list-group-item clearfix trabajador" *ngFor="let trabajador of trabajadores" style="border: red solid 1px">
+           <div class="pull-left">
+             <h4 class="list-group-item-heading">Nombre: {{trabajador.name}}</h4>
+             <p class="list-group-item-text">Email: {{trabajador.email}} </p>
+             <p class="list-group-item-text">Fono: {{trabajador.fono}}&nbsp;&nbsp;&nbsp;Edad: {{trabajador.edad}}</p>
+           </div>
+        </a>
+      </div>
 
       <div class="row" style="margin-top: 10px">
         <div class="col-xs-12">
@@ -26,7 +29,7 @@
                       required>
 
               <b>Correo</b>
-              <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+              <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                       class="input form-control"
                       placeholder="Correo electrónico" [(ngModel)]="trabajador.email"
                       #email="ngModel" required>

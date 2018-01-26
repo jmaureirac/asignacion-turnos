@@ -4,6 +4,7 @@
 .trabajador{
   margin-left: 20px;
   margin-top: 10px;
+  width: 90%;
 }
 
 .titulo{
@@ -25,4 +26,11 @@
 
 .formulario{
   margin-left: 21px;
+}
+
+.caja-trabajadores{
+  height: 385px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  
 }
