@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Trabajador } from '../modelos/trabajador';
+import { Trabajador } from '../modelos/db/trabajador';
 
 @Injectable()
 export class TrabajadorService{
