@@ -18,6 +18,11 @@
   </div>
   <div class="col-xs-2">
     <h4>Fecha:</h4>
-    <p>{{fechaString}}</p>
+    <div *ngIf="fechaString" >
+      <p> {{fechaString.rango}}</p>
+      <p> {{fechaString.bloque}}</p>
+      <p> {{fechaString.data}}</p>
+      <p> {{fechaString.dia_semana}}</p>
+    </div>
   </div>
 </div>
