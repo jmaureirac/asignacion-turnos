@@ -8,9 +8,12 @@ import { VARIABLES } from '../../modelos/variables';
 @Component({
   selector: 'app-calendario',
   templateUrl: './calendario.component.html',
-  styleUrls: ['./calendario.component.css']
+  styleUrls: ['./calendario.component.css'],
+  providers: [TrabajadorService, EventoService]
 })
 export class CalendarioComponent implements OnInit {
+  public title:string;
+
   public dd:string;
   public aa:string;
   public yyyy:string;
@@ -20,11 +23,18 @@ export class CalendarioComponent implements OnInit {
   public current_y:any;
 
 
-  constructor() {
+  constructor(
+    private _trabajadorService: TrabajadorService,
+    private _eventoService: EventoService
+  ) {
+    this.title = 'Calendario';
+    this.current_d = VARIABLES.dias[new Date().getDay() - 1];
+    this.current_m = VARIABLES.meses[new Date().getMonth()];
+    this.current_y = new Date().getFullYear();
   }
 
   ngOnInit() {
-    console.log(VARIABLES);
+    console.log(this.current_d,this.current_m, this.current_y);
   }
 
 }
