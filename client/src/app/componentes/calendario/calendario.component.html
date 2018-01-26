@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-xs-10">
+    <div class="row anho">
+      <h1>{{current_yyyy}}</h1>
+    </div>
+    <div class="row mes">
+      {{current_dia}} {{current_dd}} de {{current_mes}}
+    </div>
+    <div class="row">
+    <app-bloques
+      (fechaClickeada)="recibirFecha($event)"
+      [current_yyyy]="current_yyyy"
+      [current_mm]="current_mm"
+      [current_mes]="current_mes"
+      [semana]="semana"
+    ></app-bloques>
+    </div>
+  </div>
+  <div class="col-xs-2">
+    <h4>Fecha:</h4>
+    <p>{{fechaString}}</p>
+  </div>
+</div>
