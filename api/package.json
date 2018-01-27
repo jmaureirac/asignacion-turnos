@@ -1,5 +1,5 @@
 {
-  "name": "asignacion-horario",
+  "name": "toma-turnos",
   "version": "1.0.0",
   "description": "Asignacion de horario a trabajadores",
   "main": "index.js",
