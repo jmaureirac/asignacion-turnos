@@ -14,46 +14,7 @@
 
       <div class="row" style="margin-top: 10px">
         <div class="col-xs-12">
-          <button
-            type="submit"
-            name="button"
-            class="btn btn-success boton-agrega"
-            (click)="nuevoTrabajador()"
-          >Agregar Trabajador</button>
-          <form #addTrabajador="ngForm" (ngSubmit)="onSubmit(addTrabajador)" *ngIf="nuevo">
-            <div class="list-group-item formulario" *ngIf="nuevo">
-              <b>Nombre </b>
-              <input type="text" name="name"
-                      #name="ngModel"  class="input form-control"
-                      placeholder="Nombre completo" [(ngModel)]="trabajador.name"
-                      required>
-
-              <b>Correo</b>
-              <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                      class="input form-control"
-                      placeholder="Correo electrónico" [(ngModel)]="trabajador.email"
-                      #email="ngModel" required>
-
-              <b>Edad</b>
-              <input type="number" name="edad"
-                      class="input form-control"
-                      placeholder="Edad" [(ngModel)]="trabajador.edad"
-                      #edad="ngModel" required>
-
-              <b>Fono</b>
-              <input type="text" name="fono"
-                      class="input form-control"
-                      placeholder="Teléfono" [(ngModel)]="trabajador.fono"
-                      #fono="ngModel" required>
-
-              <input
-                type="submit"
-                value="Agregar"
-                class="btn btn-primary"
-                [disabled]="!addTrabajador.form.valid"
-              />
-            </div>
-          </form>
+          <app-ingresar-trabajador [trabajadores]="trabajadores"></app-ingresar-trabajador>
         </div>
       </div>
    </div>

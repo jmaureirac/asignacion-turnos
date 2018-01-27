@@ -25,7 +25,7 @@ export class CalendarioComponent implements OnInit {
   public current_mm:number;
   public current_yyyy:number;
 
-  public semana:number[];
+  public semana:any;
 
   @Output() dataCelda = new EventEmitter<{ rango_hora:string, data:string }>();
 
@@ -43,7 +43,7 @@ export class CalendarioComponent implements OnInit {
     this.head = VARIABLES.head;
     this.rango_bloque = VARIABLES.rango_bloque;
     this.fecha = new Date();
-    this.semana = [null,null,null,null,null];
+    this.semana = [];
   }
 
   ngOnInit() {
@@ -52,8 +52,7 @@ export class CalendarioComponent implements OnInit {
   }
 
   recibirFecha(fecha: {fechaStringEvento: string}){
-    this.fechaString = fecha.fechaStringEvento;
-    console.log(this.fechaString);
+    this.fechaString = JSON.parse(fecha.fechaStringEvento);
   }
 
   getLunes(fecha: Date){
@@ -64,9 +63,10 @@ export class CalendarioComponent implements OnInit {
     return fecha;
   }
 
-  setSemana(semana:number[], lunes:Date){
+  setSemana(semana:any, lunes:Date){
     for(let i = 0 ; i < 5 ; i++){
-      semana[i] = lunes.getDate()+i;
+      semana.push(lunes.toString());
+      lunes.setDate(lunes.getDate()+1);
     }
     return semana;
   }

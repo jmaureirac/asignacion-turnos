@@ -8,11 +8,8 @@
   <tbody>
     <tr *ngFor="let rango_hora of rango_bloque; index as j">
       <td class="rangos">{{j+1}}° Bloque <br> <i>[ {{rango_hora}} ]</i> </td>
-      <td
-        *ngFor="let data of dias; index as i"
-        (click)="onClickDataCell(rango_hora, data, semana[i])"
-        class="bloque" >
-        {{ data }} {{ semana[i] }}
+      <td *ngFor="let data of dias; index as i" (click)="onClickDataCell(rango_hora, j+1, data, semana_parse[i])" class="bloque" >
+        {{ data }} {{ semana_parse[i] }}
       </td>
     </tr>
   </tbody>

@@ -28,7 +28,6 @@ export class TrabajadoresComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('Trabajadores');
     this.cargarTrabajadores();
   }
 
@@ -50,18 +49,6 @@ export class TrabajadoresComponent implements OnInit {
         console.log(<any>error);
       }
     );
-  }
-
-  onSubmit(form){
-    this._trabajadorService.agregarTrabajador(this.trabajador).subscribe(
-      response => {
-        this.trabajadores.push(this.trabajador);
-        this.nuevo = false;
-      },
-      error => {
-        console.log(<any>error);
-      }
-    )
   }
 
 

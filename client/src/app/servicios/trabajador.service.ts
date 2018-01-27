@@ -26,5 +26,11 @@ export class TrabajadorService{
     return this._http.get(this.url+'get-trabajadores', {headers: headers});
   }
 
+  deteleTrabajador(id: string): Observable<any>{
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+    return this._http.delete(this.url+'delete-trabajador/'+id, {headers: headers});
+  }
+
 
 }
