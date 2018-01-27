@@ -1,0 +1,30 @@
+.row {
+  width: 100%;
+}
+.trabajador{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.titulo{
+  padding: 20px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.boton-agrega{
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.input-name{
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.input-edad{
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-right: 20px;
+}

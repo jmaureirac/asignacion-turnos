@@ -1,0 +1,14 @@
+.bloque:hover {
+  background: grey;
+}
+
+table {
+  text-align: center;
+  border: 1px solid black;
+}
+
+th {
+  text-align: center;
+  border: 1px solid black;
+
+}

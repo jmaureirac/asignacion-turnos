@@ -1,0 +1,17 @@
+<!-- <ng-content (dataCelda)="onClickDataCell($event)" ></ng-content> -->
+<!-- <span (click)="onClickDataCell()">{{rangoHora}} {{data}}</span> -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let celda of bloques.head">{{celda}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rango_hora of bloques.rango_bloque; i as index">
+      <td *ngFor="let data of this.bloques.head" (click)="onClickDataCell(rango_hora, data)" class="bloque" >
+        {{ i }} {{rango_hora}} {{ data}}
+      </td>
+    </tr>
+  </tbody>
+</table>
