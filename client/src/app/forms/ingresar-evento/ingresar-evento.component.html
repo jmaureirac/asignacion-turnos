@@ -1,3 +1,73 @@
-<p>
-  ingresar-evento works!
-</p>
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-success boton-agrega"
+  data-toggle="modal"
+  data-target="#eventoModal"
+  (click)="addEvento.reset()">
+  Agregar evento
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="eventoModal" tabindex="-1" role="dialog" aria-labelledby="trabajadorModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="trabajadorModalLabel">{{title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger" *ngIf="status == 'error'">
+          El correo que ingresa, ya existe.
+        </div>
+
+        <!-- formulario ingreso trabajador -->
+        <form #addEvento="ngForm" >
+          <div class="list-group-item formulario">
+            <b>Nombre </b>
+            <input type="text" name="name"
+                    #name="ngModel"  class="input form-control"
+                    placeholder="Nombre completo" [(ngModel)]="trabajador.name"
+                    required>
+
+            <b>Correo</b>
+            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    class="input form-control"
+                    placeholder="Correo electrónico" [(ngModel)]="trabajador.email"
+                    #email="ngModel" required>
+
+            <b>Edad</b>
+            <input type="number" name="edad"
+                    class="input form-control"
+                    placeholder="Edad" [(ngModel)]="trabajador.edad"
+                    #edad="ngModel" required>
+
+            <b>Fono</b>
+            <input type="text" name="fono"
+                    class="input form-control"
+                    placeholder="Teléfono" [(ngModel)]="trabajador.fono"
+                    #fono="ngModel" required>
+
+            <hr>
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="addTrabajador.reset()">Cancelar</button>
+            <input
+              type="submit"
+              value="Confirmar"
+              class="btn btn-primary"
+              (click)="onSubmit(addEvento)"
+              [disabled]="!addEvento.form.valid"
+              data-dismiss="modal"
+            />
+
+          </div>
+        </form>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

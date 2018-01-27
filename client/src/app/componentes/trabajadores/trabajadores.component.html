@@ -3,7 +3,12 @@
       <h2 class="titulo">{{titulo}} <span class="caret"></span></h2>
 
       <div class="caja-trabajadores">
-        <a href="#" class="list-group-item clearfix trabajador" *ngFor="let trabajador of trabajadores" style="border: red solid 1px">
+        <a href="#"
+          class="list-group-item clearfix trabajador"
+          *ngFor="let trabajador of trabajadores"
+          style="border: red solid 1px"
+          (click)="setTrabajadorSeleccionado(trabajador)"
+          >
            <div class="pull-left">
              <h4 class="list-group-item-heading">Nombre: {{trabajador.name}}</h4>
              <p class="list-group-item-text">Email: {{trabajador.email}} </p>

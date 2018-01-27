@@ -19,7 +19,9 @@ export var VARIABLES = {
   ],
   dias: [
     'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'
-  ]
+  ],
+  trabajador_seleccionado:[],
+
 }
 
 export interface Bloque{

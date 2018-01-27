@@ -3,6 +3,7 @@ import { Trabajador } from '../../modelos/db/trabajador';
 import { TrabajadorService } from '../../servicios/trabajador.service';
 import { Evento } from '../../modelos/db/evento';
 import { EventoService } from '../../servicios/evento.service';
+import { VARIABLES } from '../../modelos/variables';
 
 @Component({
   selector: 'app-trabajadores',
@@ -18,6 +19,7 @@ export class TrabajadoresComponent implements OnInit {
   public eventos;
   public nuevo:boolean;
   public agregar:string;
+  public trabajador_seleccionado;
 
   constructor(
     private _trabajadorService: TrabajadorService,
@@ -29,6 +31,11 @@ export class TrabajadoresComponent implements OnInit {
 
   ngOnInit() {
     this.cargarTrabajadores();
+  }
+
+  setTrabajadorSeleccionado(trabajadorSelected: Trabajador){
+    this.trabajador_seleccionado = trabajadorSelected;
+    VARIABLES.trabajador_seleccionado.push(trabajadorSelected.name);
   }
 
   nuevoTrabajador(){

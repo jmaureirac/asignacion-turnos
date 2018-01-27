@@ -24,18 +24,20 @@ export class IngresarTrabajadorComponent implements OnInit {
   }
 
 
-  onSubmit(){
+  onSubmit(form){
     this._trabajadorService.agregarTrabajador(this.trabajador).subscribe(
       response => {
         this.trabajadores.push(this.trabajador);
-        this.status = 'success';
+        this.trabajador = new Trabajador("","","",null,"");
+        form.reset();
       },
       error => {
         console.log(<any>error);
-        this.status = 'error';
       }
     )
+
   }
+
 
 
 }

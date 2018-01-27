@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { VARIABLES, Bloque } from '../../../modelos/variables';
 
 @Component({
@@ -36,8 +36,17 @@ export class BloquesComponent implements OnInit {
     this.parseSemana(this.semana, this.semana_parse);
   }
 
+  ngOnChanges(changes: SimpleChanges){
+    console.log(changes); // MIRA EL OBJETO CHANGES
+    if(changes.semana){ // SI EXISTE CAMBIO EN SEMANA
+      this.semana_parse = []; // LIMPIAMOS SEMANA
+     }
+    this.parseSemana(changes.semana.currentValue, this.semana_parse); // PARSEAMOS EL changes.semana.currentValue
+  }
+
   onClickDataCell(rango: string, bloque: number, data: string, dia_semana: number){
     this.formatearFecha(rango, bloque ,data, dia_semana);
+    console.log(this.fecha);
   }
 
   formatearFecha(rango: string, bloque: number, data: string, dia_semana: number){
