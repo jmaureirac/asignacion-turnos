@@ -19,16 +19,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="alert alert-success" *ngIf="status == 'success'">
-            Trabajador ingresado satisfactoriamente, pulse X para salir.
-          </div>
-
-          <div class="alert alert-danger" *ngIf="status == 'error'">
-            El correo que ingresa, ya existe.
+        <div class="alert alert-danger" *ngIf="status == 'error'">
+          El correo que ingresa, ya existe.
         </div>
 
         <!-- formulario ingreso trabajador -->
-        <form #addTrabajador="ngForm" (ngSubmit)="onSubmit(addTrabajador)">
+        <form #addTrabajador="ngForm" >
           <div class="list-group-item formulario">
             <b>Nombre </b>
             <input type="text" name="name"
@@ -61,17 +57,15 @@
               [disabled]="!addTrabajador.form.valid"
             /-->
             <hr>
-            {{trabajador.name}}
-            {{trabajador.email}}
-            {{trabajador.edad}}
-            {{trabajador.fono}}
 
             <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="addTrabajador.reset()">Cancelar</button>
             <input
               type="submit"
               value="Confirmar"
               class="btn btn-primary"
+              (click)="onSubmit(addTrabajador)"
               [disabled]="!addTrabajador.form.valid"
+              data-dismiss="modal"
             />
 
           </div>
