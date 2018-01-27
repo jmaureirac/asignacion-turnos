@@ -4,8 +4,9 @@
       <h1>{{current_yyyy}}</h1>
     </div>
     <div class="row mes">
+      <button type="button" name="button" class="btn btn-primary" (click)="this.semana = retrocederSemana()">Semana Anterior</button>
       {{current_dia}} {{current_dd}} de {{current_mes}}
-      <button type="button" name="button" class="btn btn-primary" (click)="this.semana = sigSemana()">Cambiar semana</button>
+      <button type="button" name="button" class="btn btn-primary" (click)="this.semana = sigSemana()">Semana Siguiente</button>
     </div>
     <div class="row">
     <app-bloques
