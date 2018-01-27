@@ -13,13 +13,17 @@ import { TrabajadoresComponent } from './componentes/trabajadores/trabajadores.c
 // SERVICIOS
 import { TrabajadorService } from './servicios/trabajador.service';
 import { EventoService } from './servicios/evento.service';
+import { IngresarTrabajadorComponent } from './forms/ingresar-trabajador/ingresar-trabajador.component';
+import { IngresarEventoComponent } from './forms/ingresar-evento/ingresar-evento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarioComponent,
     BloquesComponent,
-    TrabajadoresComponent
+    TrabajadoresComponent,
+    IngresarTrabajadorComponent,
+    IngresarEventoComponent
   ],
   imports: [
     BrowserModule,
