@@ -78,7 +78,7 @@ export class CalendarioComponent implements OnInit {
     for(let dia_semana of this.semana  ){ // RECORREMOS this.semana
       let date_dia_semana = new Date (dia_semana); // TRANSFORAMMOS EL STRING dia_semana A DATE
       let diaSemanaSiguiente = new Date()  // INICIA UNA NUEVO OBJETO DATE
-      diaSemanaSiguiente.setDate(date_dia_semana.getDate() + 7); // EL OBJETO SE LE SUMNA 7 DIAS RESPECTO AL DIA DE LA SEMANA
+      diaSemanaSiguiente.setDate(date_dia_semana.getDate() + 7); // EL OBJETO SE LE SUMA 7 DIAS RESPECTO AL DIA DE LA SEMANA
       sigSemanaString.push(diaSemanaSiguiente.toString()); // TO STRING
     }
     return sigSemanaString; // LISTO
@@ -89,7 +89,7 @@ export class CalendarioComponent implements OnInit {
     for(let dia_semana of this.semana  ){ // RECORREMOS this.semana
       let date_dia_semana = new Date (dia_semana); // TRANSFORAMMOS EL STRING dia_semana A DATE
       let diaSemanaSiguiente = new Date()  // INICIA UNA NUEVO OBJETO DATE
-      diaSemanaSiguiente.setDate(date_dia_semana.getDate() - 7); // EL OBJETO SE LE SUMNA 7 DIAS RESPECTO AL DIA DE LA SEMANA
+      diaSemanaSiguiente.setDate(date_dia_semana.getDate() - 7); // EL OBJETO SE LE RESTA 7 DIAS RESPECTO AL DIA DE LA SEMANA
       sigSemanaString.push(diaSemanaSiguiente.toString()); // TO STRING
     }
     return sigSemanaString; // LISTO
