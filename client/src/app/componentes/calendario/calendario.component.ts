@@ -74,24 +74,25 @@ export class CalendarioComponent implements OnInit {
   }
 
   sigSemana(){
-    var diaSemanaSiguiente = new Date() // NUEVO OBJETO DATE
-    var sigSemanaString = []; // PILA PARA GUARDAR NUEVOS DIAS
+    var sigSemanaString = []; // STACK PARA DIAS
     for(let dia_semana of this.semana  ){ // RECORREMOS this.semana
-      var date_dia_semana = new Date (dia_semana); // COMO dia_semana ES STRING LO INICALIZAMOS COMO DATE
-      diaSemanaSiguiente.setDate(date_dia_semana.getDate() + 7); // COMO DATE TIENE PROPIEDAD DE SUMAR; SUMAMOS 7 DIAS
-      sigSemanaString.push(diaSemanaSiguiente.toString()); // VOLVEMOS A STRING
+      let date_dia_semana = new Date (dia_semana); // TRANSFORAMMOS EL STRING dia_semana A DATE
+      let diaSemanaSiguiente = new Date()  // INICIA UNA NUEVO OBJETO DATE
+      diaSemanaSiguiente.setDate(date_dia_semana.getDate() + 7); // EL OBJETO SE LE SUMNA 7 DIAS RESPECTO AL DIA DE LA SEMANA
+      sigSemanaString.push(diaSemanaSiguiente.toString()); // TO STRING
     }
-    return sigSemanaString; // RETORMANOS ARRAY CON LOS DIAS DE LA SIGUIENTE SEMANA
+    return sigSemanaString; // LISTO
   }
 
   retrocederSemana(){
-    var diaSemanaSiguiente = new Date() // NUEVO OBJETO DATE
-    var sigSemanaString = []; // PILA PARA GUARDAR NUEVOS DIAS
+    var sigSemanaString = []; // STACK PARA DIAS
     for(let dia_semana of this.semana  ){ // RECORREMOS this.semana
-      var date_dia_semana = new Date (dia_semana); // COMO dia_semana ES STRING LO INICALIZAMOS COMO DATE
-      diaSemanaSiguiente.setDate(date_dia_semana.getDate() - 7); // COMO DATE TIENE PROPIEDAD DE SUMAR; SUMAMOS 7 DIAS
-      sigSemanaString.push(diaSemanaSiguiente.toString()); // VOLVEMOS A STRING
+      let date_dia_semana = new Date (dia_semana); // TRANSFORAMMOS EL STRING dia_semana A DATE
+      let diaSemanaSiguiente = new Date()  // INICIA UNA NUEVO OBJETO DATE
+      diaSemanaSiguiente.setDate(date_dia_semana.getDate() - 7); // EL OBJETO SE LE SUMNA 7 DIAS RESPECTO AL DIA DE LA SEMANA
+      sigSemanaString.push(diaSemanaSiguiente.toString()); // TO STRING
     }
-    return sigSemanaString; // RETORMANOS ARRAY CON LOS DIAS DE LA SIGUIENTE SEMANA 
+    return sigSemanaString; // LISTO
   }
+
 }

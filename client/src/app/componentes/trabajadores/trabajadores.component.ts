@@ -33,10 +33,6 @@ export class TrabajadoresComponent implements OnInit {
     this.cargarTrabajadores();
   }
 
-  setTrabajadorSeleccionado(trabajadorSelected: Trabajador){
-    this.trabajador_seleccionado = trabajadorSelected;
-    VARIABLES.trabajador_seleccionado.push(trabajadorSelected.name);
-  }
 
   nuevoTrabajador(){
     this.trabajador = new Trabajador("","","",null,"");

@@ -4,10 +4,12 @@
       <h1>{{current_yyyy}}</h1>
     </div>
     <div class="row mes">
-      <button type="button" name="button" class="btn btn-primary" (click)="this.semana = retrocederSemana()">Semana Anterior</button>
-      {{current_dia}} {{current_dd}} de {{current_mes}}
-      <button type="button" name="button" class="btn btn-primary" (click)="this.semana = sigSemana()">Semana Siguiente</button>
-    </div>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary" (click)="this.semana = retrocederSemana()">Semana Anterior</button>
+            <button type="button" class="btn btn-primary" disabled>{{current_dia}} {{current_dd}} de {{current_mes}}</button>
+            <button type="button" class="btn btn-primary" (click)="this.semana = sigSemana()">Semana Siguiente</button>
+          </div>
+        </div>
     <div class="row">
     <app-bloques
       (fechaClickeada)="recibirFecha($event)"

@@ -40,8 +40,8 @@ export class BloquesComponent implements OnInit {
     console.log(changes); // MIRA EL OBJETO CHANGES
     if(changes.semana){ // SI EXISTE CAMBIO EN SEMANA
       this.semana_parse = []; // LIMPIAMOS SEMANA
+      this.parseSemana(changes.semana.currentValue, this.semana_parse); // PARSEAMS EL changes.semana.currentValue
      }
-    this.parseSemana(changes.semana.currentValue, this.semana_parse); // PARSEAMOS EL changes.semana.currentValue
   }
 
   onClickDataCell(rango: string, bloque: number, data: string, dia_semana: number){
