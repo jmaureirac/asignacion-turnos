@@ -26,4 +26,10 @@ export class EventoService{
     return this._http.post(this.url+'get-eventos-trabajador/'+trabajador_id, {headers: headers});
   }
 
+  deleteEvento(id: string): Observable<any>{
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+
+    return this._http.delete(this.url+'delete-evento/'+id, {headers: headers});
+  }
+
 }
